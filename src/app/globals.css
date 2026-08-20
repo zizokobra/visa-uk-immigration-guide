@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&family=Noto+Naskh+Arabic:wght@400..700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #1a1a2e;
+  --primary: #0a1628;
+  --primary-light: #162d50;
+  --secondary: #c8a951;
+  --secondary-light: #d4b96a;
+  --accent: #1e3a5f;
+  --muted: #f8f7f4;
+  --muted-foreground: #6b7280;
+  --border: #e5e2db;
+  --ring: #c8a951;
+  --success: #22c55e;
+  --error: #ef4444;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-secondary: var(--secondary);
+  --color-secondary-light: var(--secondary-light);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-error: var(--error);
+  --font-sans: 'Noto Naskh Arabic', Arial, Helvetica, sans-serif;
+  --font-heading: 'Noto Kufi Arabic', Arial, Helvetica, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a1628;
+    --foreground: #f5f3ee;
+    --primary: #1e3a5f;
+    --primary-light: #2d5a87;
+    --secondary: #c8a951;
+    --secondary-light: #d4b96a;
+    --muted: #111c30;
+    --muted-foreground: #94a3b8;
+    --border: #1e3248;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  line-height: 1.8;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) var(--primary);
+}
+
+::selection {
+  background-color: var(--secondary);
+  color: var(--primary);
+}
+
+.focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
